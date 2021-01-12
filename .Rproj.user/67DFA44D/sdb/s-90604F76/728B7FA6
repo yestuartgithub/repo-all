@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# ==============================================================================\n# ==============================================================================\n# --- DESCRIPTION ---\n#\n#\n# --- INDEX ---\nADD YOEL'S WICKED TABLE CONTENT STUFF'\n## if you have clear chunks of code, use collapsible dividers (# ==== or # ----)\n## and number the sections. Provide brief description for each section here\n#\n#\n# ==============================================================================\n\n\n\n# ==============================================================================\n\n\n\n# === END ======================================================================\n# ==============================================================================",
+    "created" : 1610485345297.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3860597063",
+    "id" : "728B7FA6",
+    "lastKnownWriteTime" : 1610485298,
+    "last_content_update" : 1610485298,
+    "path" : "~/Desktop/repo-all/2.data.manip.R",
+    "project_path" : "2.data.manip.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

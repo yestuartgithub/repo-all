@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# ==============================================================================\n# ==============================================================================\n# --- GENERAL ---\n\n## 1.main.R \n## the first file a user should use and run as it contains information  critical\n## to run the whole project\n# authors:\n# \n# R version\nR.version.string\n# \"R version 3.6.3 (2020-02-29)\"\n#\n# NOTE: run the 1.main.R before starting your session.\n#\n## the '##' are extra comments, delete when using this as template\n#\n# ==============================================================================\n# --- NOTES ---\n\n# various comments\n# • \n# •\n# •\n# \n## I often use this as a 'to do' list\n#\n# ==============================================================================\n# --- SCRIPT INDEX ---\n\n## the different script files of your analysis workflow\n## numbering names will make sure they are nicely ordered\n# 1.main.R        \n# 2.data.manip.R\n# 3.analysis.R\n## for big projects you may want to have multiple analysis files\n## big project may also require you to write and store functions in a script\n# 4.functions.R\n## and this can apply to figure functions too\n# 5.figures.R\n#\n# ==============================================================================\n# --- GLOBAL VARIABLES ---\n\n## declare variables that will be used across the project and should not be \n## changed. For example names, or a range of e.g. dates selected, etc\n\nwk.dir <- getwd() # location of thee working directory\n## var.name.1 <- \"something\" # important variable doing....\n## var.name.2 <- \"something.different\" #\n\n# ==============================================================================\n# --- LIBRARIES ---\n\n# install libraries needed for the project\ninstall.packages(\"name.of.package\")\n\n# load the libraries needed for the project to run \nlibrary(name.of.package) #....\n\n# ==============================================================================\n# --- FOLDER MANAGEMENT ---\n\n## names of project folders(\"a.figures\",\"b.data.raw\",\"c.data.clean\",\"d.results\")\n## store names of the folders in an object\n\n# folder names\n## the a b c makes them ordered again, but not \nfolder.names <- c(\"a.data.raw\",\"b.data.clean\", \"c.results\",\"d.figures\")\n\n# create folders if they don't exit yet. \nfor(i in 1:length(folder.names)){ \n  if(file.exists(folder.names[i]) == FALSE){\n    dir.create(folder.names[i])\n  } \n}\n\n## you need to store in an object the file path to these folders so we can \n## read from them and write to them.\n\n# paths to the folders. The 'p.' indicates the variable is a path.\n# make sure the variable names describe the folder.names\np.data.raw <- paste(wk.dir, \"/\", folder.names[1], \"/\", sep = \"\")\np.data.clean <- paste(wk.dir, \"/\", folder.names[2], \"/\", sep = \"\")\np.results <- paste(wk.dir, \"/\", folder.names[3], \"/\", sep = \"\")\np.fig <- paste(wk.dir, \"/\", folder.names[4], \"/\", sep = \"\")\n\n# ==============================================================================\n# --- RUN SCRIPTS ---\n\n## you can run a scripts file as a batch the start. Only do this for code which  \n## is really needed to run other script files. Take care not to force the user\n## to run the whole project at once especially when computationally intensive\n\n# run scripts needed to make other scripts files work (e.g. functions.R)\nsource(\"your.code.R\")\n#\n\n# ==== END =====================================================================\n# ==============================================================================\n\n",
+    "created" : 1610485344137.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "7315510",
+    "id" : "80E6CBCF",
+    "lastKnownWriteTime" : 1610485298,
+    "last_content_update" : 1610485298,
+    "path" : "~/Desktop/repo-all/1.main.R",
+    "project_path" : "1.main.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
