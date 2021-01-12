@@ -1,0 +1,50 @@
+---
+title: "markdown example.simple"
+output: html_document
+---
+
+You can mix the text and and the code. If you don't want the code to be shown, you just type 'echo = FALSE. In general this is a good method for sort projects. I find that it gets quite messy quickly, with your R code more fragmented.
+If you just read one summary file you can do it this way, or you want to do a couple of analyses only, and each go into a new markdown file.
+
+Let's start an analyses.
+
+```{r}
+# simulate data
+x.t <- rnorm(10, 5, 2)
+y.t <- rnorm(10, 6, 1)
+
+```
+
+If we do 'echo = FALSE' we only get what you output, here a graph.
+
+```{r, echo=FALSE}
+
+# store the path to each folder in an object
+output.folder.names <- c("figures", "data output")
+path.data.output <- paste(working.dir, "/", output.folder.names[2], "/", sep = "")
+##
+
+
+plot(NA, ylim = ylim.t, xlim = xlim.t, las = 1, ylab = "mean +/- sd", xlab = "file")
+for(i in 1:nrow(data.t)){
+  points(i, data.t$mean[i], pch = 19, col = "blue")
+  # plot the sd
+  lines(rep(i,2),c((data.t$mean[i] - data.t$sd[i]), (data.t$mean[i] + data.t$sd[i])) )
+}
+```
+
+### random stats
+
+Let's do some stats.
+
+```{r, echo=FALSE}
+factor.level <- rep(c("A","B"), c(3, (nrow(data.t) - 3) ))
+summary(lm(data.t$mean ~ factor.level))$coefficient
+
+```
+
+It is easy to add things inline, for example the p = `r  summary(lm(data.t$mean ~ factor.level))$coefficient[2, 4]` which will change if we add more data or redo the analyses.
+Wicked.
+
+There are some other tricks to e.g. format a formula etc but it is less sophisticated than LateX for example. For me it is mainly useful for a woring document, not really a manuscript.
+
